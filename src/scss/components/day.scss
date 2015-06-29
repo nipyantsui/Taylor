@@ -1,0 +1,131 @@
+.day {
+  width: 14.2857%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.day {
+  margin-bottom: ms(1);
+  
+  .omnom-control {
+    height: ms(2);
+    background-color: $om-colour-yay;
+    width: 20%;
+  }
+  
+  .exerxion {
+    height: ms(2);
+    background-color: $ex-colour-yay;
+    width: 20%;
+  }
+  
+  .two-points {
+    width: 40%;
+  }
+  .three-points {
+    width: 60%;
+  }
+  .four-points {
+    width: 80%;
+  }
+  .five-points {
+    width: 100%;
+  }
+}
+
+.row.stars .day {
+  
+  .omnom-control {
+    background-color: transparent;
+    height: ms(3);
+    width: 100%;
+  
+    i {
+      display: inline-block;
+    }
+    
+    & [class^="flaticon-"]:before, & [class*=" flaticon-"]:before,
+    & [class^="flaticon-"]:after, & [class*=" flaticon-"]:after {   
+      font-family: Flaticon;
+      font-size: ms(2);
+      font-style: normal;
+      color: $om-colour-fail;
+    }
+    
+    & [class^="flaticon-"].yay:before, & [class*=" flaticon-"].yay:before,
+    & [class^="flaticon-"].yay:after, & [class*=" flaticon-"].yay:after {   
+      
+      color: $om-colour-yay;
+    }
+  }
+  
+  .exerxion {
+    background-color: transparent;
+    height: ms(3);
+    width: 100%;
+  
+    i {
+      display: inline-block;
+    }
+    
+    & [class^="flaticon-"]:before, & [class*=" flaticon-"]:before,
+    & [class^="flaticon-"]:after, & [class*=" flaticon-"]:after {   
+      font-family: Flaticon;
+      font-size: ms(2);
+      font-style: normal;
+      color: $ex-colour-fail;
+    }
+    
+    & [class^="flaticon-"].yay:before, & [class*=" flaticon-"].yay:before,
+    & [class^="flaticon-"].yay:after, & [class*=" flaticon-"].yay:after {   
+      
+      color: $ex-colour-yay;
+    }
+  }
+}
+
+
+svg g text.icon {
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+  
+  &.cat48 {
+    content: "\e000";
+  }
+}
+
+
+
+
+
+.chart rect {
+  &.om-bg {
+    fill: $om-colour-fail;
+  }
+  &.ex-bg {
+    fill: $ex-colour-fail;
+  }  
+  &.om {
+    fill: $om-colour-yay;
+  }
+  &.ex {
+    fill: $ex-colour-yay;
+  }
+}
+
+.chart text {
+  fill: $colour-text;
+  font-size: ms(2);
+  font-weight: bold;
+  text-anchor: initial;
+}
+
+
+
+
+
+

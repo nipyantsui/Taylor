@@ -1,0 +1,16 @@
+[class^="icon-eevee-"], [class*="icon-eevee-"] {
+  display: inline-block;
+}
+[class^="icon-eevee-"]:before, [class*="icon-eevee-"]:before,
+[class^="icon-eevee-"]:after, [class*="icon-eevee-"]:after {   
+  display: inline-block;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.icon-eevee-naga:before {
+  content: "";
+  background: url('images/eevee-icons.png') -113px -69px;
+  width: 137px;
+  height: 137px;
+}

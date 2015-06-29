@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/flaticon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+}
+.flaticon-cat48:before {
+	content: "\e000";
+}
+.flaticon-cat49:before {
+	content: "\e001";
+}
+.flaticon-favourites7:before {
+	content: "\e002";
+}
+.flaticon-flower165:before {
+	content: "\e003";
+}
+.flaticon-like60:before {
+	content: "\e004";
+}
+.flaticon-liquid12:before {
+	content: "\e005";
+}
+.flaticon-loving11:before {
+	content: "\e006";
+}
+.flaticon-manure:before {
+	content: "\e007";
+}
+.flaticon-marriage:before {
+	content: "\e008";
+}
+.flaticon-rocket66:before {
+	content: "\e009";
+}
+.flaticon-royal162:before {
+	content: "\e00a";
+}
+.flaticon-sand16:before {
+	content: "\e00b";
+}
