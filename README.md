@@ -1,6 +1,6 @@
 # Taylor
 
-Taylor is running on a modification of [ng-boilerplate](http://joshdmiller.github.com/ng-boilerplate) with sass and karma-chrome.
+Taylor is running on a modification of [ng-boilerplate](http://joshdmiller.github.com/ng-boilerplate) with sass and karma-chrome
 
 ***
 
