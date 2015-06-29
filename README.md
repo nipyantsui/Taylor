@@ -1,4 +1,4 @@
-# [Taylor](https://github.com/nipyantsui/Taylor)
+# Taylor
 
 - Install Node.js
 - Install Ruby
