@@ -41,8 +41,32 @@ angular.module( 'ngBoilerplate.home', [
  * And of course we define a controller for our route.
  */
 .controller( 'HomeCtrl', function HomeController( $scope ) {
-  $scope.temperature = '14';
-})
-
-;
+  
+  $scope.temperature = getRandomNumber(6, 20).toString();
+  
+  
+  randomDate = randomDate(new Date(2015, 0, 1), new Date());
+  $scope.dayOfTheWeek = weekday[randomDate.getDay()];
+  $scope.day = randomDate.getDate().toString();
+  $scope.month = randomDate.getMonth().toString();
+  
+  var daysOfTheWeek = new Array(7);
+  daysOfTheWeek[0]=  "Sunday";
+  daysOfTheWeek[1] = "Monday";
+  daysOfTheWeek[2] = "Tuesday";
+  daysOfTheWeek[3] = "Wednesday";
+  daysOfTheWeek[4] = "Thursday";
+  daysOfTheWeek[5] = "Friday";
+  daysOfTheWeek[6] = "Saturday";
+  
+  function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+  function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  }
+  
+  
+});
 

@@ -32,28 +32,61 @@
         h1 {
           font-size: ms(3); 
         }
-        
+
         p {
-          font-size: ms(1); 
-          line-height: ms(2);
-          
-          b {
-            font-size: ms(2); 
+          margin: 0;
+          font-size: ms(1);
+        }
+        
+        
+        
+        
+        .date {
+          text-align: center;
+          .day-of-the-week {
+            width: 136px;
+            line-height: 1.8em;
+            border-radius: 5px 5px 0px 0px;
+            &.friday {
+              background-color: #F64747;
+            }
           }
-          
-          .rose {
-            color: #FF3272; 
+          .day {
+            line-height: 1em;
+            padding-top: 0.1em;
+            background-color: #F1F1F1;
+            font-size: ms(3);
+            font-weight: bold;
+            color: $colour-text;
+            width: 136px;
+          }
+          .month {
+            width: 136px;
+            padding-bottom: 0.4em;
+            border-radius: 0px 0px 5px 5px;
+            background-color: #F1F1F1;
+            color: $colour-text;
           }
         }
         
-        .weather-info {
-          display: inline-block;
+        
+        .weather {
+          .temperature {
+            font-size: ms(2);
+            font-weight: bold;
+            text-align: center;
+          }
         }
-      }
-      
-      .align-right {
-        float: right;
-        clear: both;
+        
+        .quote {
+          margin: 15px 0;
+          .rose {
+            font-size: ms(1);
+            color: #F62459;
+          }
+        }
+        
+        
       }
     }
   }
