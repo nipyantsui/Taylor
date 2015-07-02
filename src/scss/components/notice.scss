@@ -7,6 +7,16 @@
     .notice-container {
       padding: ms(-1);
       
+      .splittery  {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      
+      .double-splittery  {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      
       &.sunny {
         @include gradient(#FF9600, #FFBF00, 90);
         
@@ -24,13 +34,14 @@
       }
 
       .notice {
-        //background-color: $notice-colour;
-        //@include card(1);
         height: 100%;
         padding: ms(1);
         
         h1 {
+          margin: 0;
           font-size: ms(3); 
+          text-shadow: 4px 2px rgba(238, 238, 238, 0.5);
+          text-align: center;
         }
 
         p {
@@ -43,46 +54,96 @@
         
         .date {
           text-align: center;
-          .day-of-the-week {
+          
+          .calendar-page {
             width: 136px;
-            line-height: 1.8em;
-            border-radius: 5px 5px 0px 0px;
-            &.friday {
-              background-color: #F64747;
+            margin: 0 auto;
+            border-radius: 5px;
+            @include card(1);
+          
+            .day-of-the-week {
+              width: 136px;
+              line-height: 1.8em;
+              border-radius: 5px 5px 0px 0px;
+              &.sunday {
+                background-color: #3498db;
+              }
+              &.monday {
+                background-color: #F9690E;
+              }
+              &.tuesday {
+                background-color: #20C74D;
+              }
+              &.wednesday {
+                background-color: #9741EE;
+              }
+              &.thursday {
+                background-color: #31D4A3;
+              }
+              &.friday {
+                background-color: #F33737;
+              }
+              &.saturday {
+                background-color: #F62DA6;
+              }
             }
-          }
-          .day {
-            line-height: 1em;
-            padding-top: 0.1em;
-            background-color: #F1F1F1;
-            font-size: ms(3);
-            font-weight: bold;
-            color: $colour-text;
-            width: 136px;
-          }
-          .month {
-            width: 136px;
-            padding-bottom: 0.4em;
-            border-radius: 0px 0px 5px 5px;
-            background-color: #F1F1F1;
-            color: $colour-text;
+            .day {
+              line-height: 1em;
+              padding-top: 0.1em;
+              background-color: #F1F1F1;
+              font-size: ms(3);
+              font-weight: bold;
+              color: $colour-text;
+              width: 136px;
+            }
+            .month {
+              width: 136px;
+              padding-bottom: 0.4em;
+              border-radius: 0px 0px 5px 5px;
+              background-color: #F1F1F1;
+              color: $colour-text;
+            }
           }
         }
         
         
         .weather {
+          text-align: center;
           .temperature {
             font-size: ms(2);
             font-weight: bold;
-            text-align: center;
           }
         }
         
         .quote {
-          margin: 15px 0;
+          text-align: center;
+          
+          &.motivational {
+            padding: 20px 15px;
+            background-color: $colour-white;
+            border-radius: 10px;
+            color: $colour-text;
+            font-family: $cond;
+            font-size: ms(2);
+            font-weight: bold; 
+            
+            &:before {
+              content: "";
+              position: absolute;
+              bottom: -40px;
+              right: 34px;
+              border-width: 20px;
+              border-style: solid;
+              border-color: transparent;
+              width: 0;
+              display: block;
+              border-top-color: #fff;
+            }
+          }
+          
           .rose {
             font-size: ms(1);
-            color: #F62459;
+            color: #F624B4;
           }
         }
         

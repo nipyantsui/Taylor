@@ -42,22 +42,31 @@ angular.module( 'ngBoilerplate.home', [
  */
 .controller( 'HomeCtrl', function HomeController( $scope ) {
   
+  var daysOfTheWeek = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"); 
+  
+  var months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+  
+  var eevees = new Array('eevee', 'flareon', 'glaceon', 'naga');
+    
+  var weather= new Array(
+    'flat-weather-moon-windy',
+    'flat-weather-sunny',
+    'flat-weather-moon-lightning'
+  );
+
+  var myRandomDate = randomDate(new Date(2015, 0, 1), new Date());
+
+  $scope.weather = weather[getRandomNumber(0, 2)];
   $scope.temperature = getRandomNumber(6, 20).toString();
   
+  $scope.dayOfTheWeek = daysOfTheWeek[myRandomDate.getDay()];
+  $scope.day = myRandomDate.getDate().toString();
+  $scope.month = months[myRandomDate.getMonth()];
   
-  randomDate = randomDate(new Date(2015, 0, 1), new Date());
-  $scope.dayOfTheWeek = weekday[randomDate.getDay()];
-  $scope.day = randomDate.getDate().toString();
-  $scope.month = randomDate.getMonth().toString();
+  var eevee = eevees[getRandomNumber(0, 3)];
+  $scope.eevee = 'assets/images/eevee-chibi-' + eevee + '.png';
   
-  var daysOfTheWeek = new Array(7);
-  daysOfTheWeek[0]=  "Sunday";
-  daysOfTheWeek[1] = "Monday";
-  daysOfTheWeek[2] = "Tuesday";
-  daysOfTheWeek[3] = "Wednesday";
-  daysOfTheWeek[4] = "Thursday";
-  daysOfTheWeek[5] = "Friday";
-  daysOfTheWeek[6] = "Saturday";
+  $scope.quote = 'nothing worth having comes easy';
   
   function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
