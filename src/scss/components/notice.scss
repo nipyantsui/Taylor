@@ -1,154 +1,170 @@
 .notice-dashboard {
-  height: 100vh;
-  
-  .row {
-    height: 100%;
     
-    .notice-container {
-      padding: ms(-1);
+  .notice-container {
+    
+    /* Themes */
+    &.sunny {
+      @include gradient(#FF9600, #FFBF00, 90);
+
+      h1, p {
+       color: $colour-white; 
+      }
+    }
+
+    &.hersheys {
+      @include gradient(#1B1B1B, #343434, 90);
+
+      h1, p {
+       color: #A6A6A6;
+      }
+    }
+
+    
+    /* Notice */
+    .notice {
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding: ms(1);
+      margin-bottom: 20vh;
       
-      .splittery  {
-        margin-top: 15px;
-        margin-bottom: 15px;
+      .content {
+        margin: auto 0;
+        width: 100%;
       }
       
-      .double-splittery  {
-        margin-top: 30px;
-        margin-bottom: 30px;
-      }
-      
-      &.sunny {
-        @include gradient(#FF9600, #FFBF00, 90);
-        
-        h1, p {
-         color: $colour-white; 
-        }
-      }
-      
-      &.hersheys {
-        @include gradient(#1B1B1B, #343434, 90);
-          
-        h1, p {
-         color: #A6A6A6;
-        }
+
+      h1 {
+        width: 100%;
+        margin: 0;
+        font-size: ms(3); 
+        text-shadow: 4px 2px rgba(238, 238, 238, 0.5);
+        text-align: center;
+        margin-bottom: 20vh;
       }
 
-      .notice {
-        height: 100%;
-        padding: ms(1);
-        
-        h1 {
-          margin: 0;
-          font-size: ms(3); 
-          text-shadow: 4px 2px rgba(238, 238, 238, 0.5);
-          text-align: center;
-        }
+      p {
+        margin: 0;
+        font-size: ms(1);
+      }
 
-        p {
-          margin: 0;
-          font-size: ms(1);
-        }
-        
-        
-        
-        
-        .date {
-          text-align: center;
-          
-          .calendar-page {
+
+
+
+      .date {
+        text-align: center;
+
+        .calendar-page {
+          width: 136px;
+          margin: 0 auto;
+          border-radius: 5px;
+          @include card(1);
+
+          .day-of-the-week {
             width: 136px;
-            margin: 0 auto;
-            border-radius: 5px;
-            @include card(1);
-          
-            .day-of-the-week {
-              width: 136px;
-              line-height: 1.8em;
-              border-radius: 5px 5px 0px 0px;
-              &.sunday {
-                background-color: #3498db;
-              }
-              &.monday {
-                background-color: #F9690E;
-              }
-              &.tuesday {
-                background-color: #20C74D;
-              }
-              &.wednesday {
-                background-color: #9741EE;
-              }
-              &.thursday {
-                background-color: #31D4A3;
-              }
-              &.friday {
-                background-color: #F33737;
-              }
-              &.saturday {
-                background-color: #F62DA6;
-              }
+            line-height: 1.8em;
+            border-radius: 5px 5px 0px 0px;
+            &.sunday {
+              background-color: #3498db;
             }
-            .day {
-              line-height: 1em;
-              padding-top: 0.1em;
-              background-color: #F1F1F1;
-              font-size: ms(3);
-              font-weight: bold;
-              color: $colour-text;
-              width: 136px;
+            &.monday {
+              background-color: #F9690E;
             }
-            .month {
-              width: 136px;
-              padding-bottom: 0.4em;
-              border-radius: 0px 0px 5px 5px;
-              background-color: #F1F1F1;
-              color: $colour-text;
+            &.tuesday {
+              background-color: #20C74D;
+            }
+            &.wednesday {
+              background-color: #9741EE;
+            }
+            &.thursday {
+              background-color: #31D4A3;
+            }
+            &.friday {
+              background-color: #F33737;
+            }
+            &.saturday {
+              background-color: #F62DA6;
             }
           }
-        }
-        
-        
-        .weather {
-          text-align: center;
-          .temperature {
-            font-size: ms(2);
+          .day {
+            line-height: 1em;
+            padding-top: 0.1em;
+            background-color: #F1F1F1;
+            font-size: ms(3);
             font-weight: bold;
-          }
-        }
-        
-        .quote {
-          text-align: center;
-          
-          &.motivational {
-            padding: 20px 15px;
-            background-color: $colour-white;
-            border-radius: 10px;
             color: $colour-text;
-            font-family: $cond;
-            font-size: ms(2);
-            font-weight: bold; 
-            
-            &:before {
-              content: "";
-              position: absolute;
-              bottom: -40px;
-              right: 34px;
-              border-width: 20px;
-              border-style: solid;
-              border-color: transparent;
-              width: 0;
-              display: block;
-              border-top-color: #fff;
-            }
+            width: 136px;
           }
-          
-          .rose {
-            font-size: ms(1);
-            color: #F624B4;
+          .month {
+            width: 136px;
+            padding-bottom: 0.4em;
+            border-radius: 0px 0px 5px 5px;
+            background-color: #F1F1F1;
+            color: $colour-text;
           }
         }
-        
-        
       }
+
+
+      .weather {
+        text-align: center;
+        .temperature {
+          font-size: ms(2);
+          font-weight: bold;
+        }
+      }
+
+      .quote {
+        text-align: center;
+
+        &.motivational {
+          position: relative;
+          padding: 20px 15px;
+          background-color: $colour-white;
+          border-radius: 10px;
+          color: $colour-text;
+          font-family: $cond;
+          font-size: ms(2);
+          font-weight: bold; 
+
+          &:before {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            right: 34px;
+            border-width: 20px;
+            border-style: solid;
+            border-color: transparent;
+            width: 0;
+            display: block;
+            border-top-color: #fff;
+          }
+        }
+
+        .rose {
+          font-size: ms(1);
+          color: #F624B4;
+        }
+      }
+      
+      .eevee-container {
+        img {
+          display: block;
+          margin:0 auto;
+        } 
+      }
+    }
+    
+
+    .splittery  {
+      margin-bottom: 15px;
+    }
+
+    .double-splittery  {
+      margin-bottom: 30px;
     }
   }
 }

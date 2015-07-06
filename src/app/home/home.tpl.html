@@ -2,56 +2,49 @@
 <div class="notice-dashboard container-fluid">
 
 
-<div class="row">
-  <div class="notice-container sunny col-xs-12">
+  <div class="notice-container sunny row">
+    
+    
+    <!-- Date -->
     <div class="notice">
-      <div class="row">
-        
-        
-        <!-- Greeting -->
-        <h1 class="col-xs-12">Rise and shine, shortcake!</h1>
-        <div class="double-splittery col-xs-12"></div>
-        
-        
-        <!-- Date -->
-        <div class="date col-xs-12">
-          <div class="calendar-page">
-            <p class="day-of-the-week {{dayOfTheWeek | lowercase}}">{{dayOfTheWeek}}</p>
-            <p class="day">{{day}}</p>
-            <p class="month">{{month}}</p>
-          </div>          
-        </div>
-        <div class="splittery col-xs-12"></div>
-        <p class="quote col-xs-12">It's finally Friday! Time to get shitfaced!</p>
-        <div class="double-splittery col-xs-12"></div>
-        
-        
-        
-        <!-- Weather -->
-        <div class="weather col-xs-12">
+      <h1>Rise and shine, shortcake!</h1>
+      <div class="double-splittery"></div>
+      <div class="date">
+        <div class="calendar-page">
+          <p class="day-of-the-week {{dayOfTheWeek | lowercase}}">{{dayOfTheWeek}}</p>
+          <p class="day">{{day}}</p>
+          <p class="month">{{month}}</p>
+        </div>          
+
+        <div class="splittery"></div>
+        <p class="quote">It's finally Friday! Time to get shitfaced!</p>
+        <div class="double-splittery"></div>
+      </div>
+    </div>
+      
+
+    <!-- Weather -->
+    <div class="notice">
+      <div class="content">
+        <div class="weather">
           <i class="{{weather}} align-right"></i>
           <p class="temperature">{{temperature}}&deg;C</p>
         </div>
-        <div class="splittery col-xs-12"></div>
-        <p class="quote col-xs-12">You look <b class="rose">amazing</b> and so is the weather for the rest of the day</p>
-        <div class="double-splittery col-xs-12"></div>
-        
-        <!-- Eevee -->
-        <p class="quote motivational col-xs-12">{{quote | uppercase}}</p>
-        <div class="splittery col-xs-12"></div>
-        <div class="eevee-container col-xs-12">
-          <img ng-src="{{eevee}}">
-        </div>
+        <div class="splittery"></div>
+        <p class="quote">You look <b class="rose">amazing</b> and so is the weather for the rest of the day</p>
+        <div class="double-splittery"></div>
       </div>
-      
-
     </div>
+
+    <!-- Eevee -->
+    <div class="notice">
+      <p class="quote motivational">{{quote | uppercase}}</p>
+      <div class="splittery"></div>
+      <div class="eevee-container">
+        <img ng-src="{{eevee}}">
+      </div>
+    </div>
+    
+    
   </div>
-  
-  
-  
-  
-  
-  
-  
 </div>
