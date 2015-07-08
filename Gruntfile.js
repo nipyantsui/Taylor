@@ -165,6 +165,28 @@ module.exports = function ( grunt ) {
             expand: true
           }
         ]
+      },
+      propellant_files: {
+        files: [
+          {
+            src: [ '*.*' ],
+            dest: '<%= propellant_dir %>/css',
+            cwd: '<%= build_dir %>/assets/css/',
+            expand: true
+          },
+          {
+            src: [ '<%= vendor_files.js %>' ],
+            dest: '<%= propellant_dir %>/',
+            cwd: '.',
+            expand: true
+          },
+          {
+            src: [ '*' ],
+            dest: '<%= propellant_dir %>/images',
+            cwd: 'src/assets/images/',
+            expand: true
+          }
+        ]
       }
     },
 
@@ -179,9 +201,9 @@ module.exports = function ( grunt ) {
       build_css: {
         src: [
           '<%= vendor_files.css %>',
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+          '<%= build_dir %>/assets/css/taylor.css'
         ],
-        dest: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+        dest: '<%= build_dir %>/assets/css/taylor.css'
       },
       /**
        * The `compile_js` target is the concatenation of our application source
@@ -199,7 +221,7 @@ module.exports = function ( grunt ) {
           '<%= html2js.common.dest %>', 
           'module.suffix' 
         ],
-        dest: '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.js'
+        dest: '<%= compile_dir %>/assets/taylor.js'
       }
     },
 
@@ -263,12 +285,12 @@ module.exports = function ( grunt ) {
     less: {
       build: {
         files: {
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.less %>'
+          '<%= build_dir %>/assets/taylor.css': '<%= app_files.less %>'
         }
       },
       compile: {
         files: {
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.less %>'
+          '<%= build_dir %>/assets/taylor.css': '<%= app_files.less %>'
         },
         options: {
           cleancss: true,
@@ -291,7 +313,7 @@ module.exports = function ( grunt ) {
 				compass: false
 			},
 			files: {
-				'<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.sass %>'
+				'<%= build_dir %>/assets/css/taylor.css': '<%= app_files.sass %>'
 			}
 		}
 	},
@@ -299,8 +321,8 @@ module.exports = function ( grunt ) {
     cssmin: {
       target: {
         files: [{
-          src: ['<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'],
-          dest: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.min.css'
+          src: ['<%= build_dir %>/assets/css/taylor.css'],
+          dest: '<%= build_dir %>/assets/css/taylor.min.css'
         }]
       }
     },
@@ -420,7 +442,7 @@ module.exports = function ( grunt ) {
           '<%= html2js.common.dest %>',
           '<%= html2js.app.dest %>',
           '<%= vendor_files.css %>',
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+          '<%= build_dir %>/assets/css/taylor.css'
         ]
       },
 
@@ -434,7 +456,7 @@ module.exports = function ( grunt ) {
         src: [
           '<%= concat.compile_js.dest %>',
           '<%= vendor_files.css %>',
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
+          '<%= build_dir %>/assets/css/taylor.css'
         ]
       }
     },
@@ -541,11 +563,11 @@ module.exports = function ( grunt ) {
       },
 
       /**
-       * When the CSS files change, we need to compile and minify them.
+       * When the SCSS files change, we need to compile and minify them.
        */
       sass: {
         files: [ 'src/**/*.scss', 'src/*.scss' ],
-        tasks: [ 'sass' ]
+        tasks: [ 'sass', 'copy:propellant_files' ]
       },
 
       /**
@@ -601,7 +623,7 @@ module.exports = function ( grunt ) {
   grunt.registerTask( 'build', [
     'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'sass',
     'concat:build_css',  'cssmin', 'copy:build_app_assets', 'copy:build_vendor_assets',
-    'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'index:build', 'karmaconfig',
+    'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'copy:propellant_files', 'index:build', 'karmaconfig',
     'karma:continuous' 
   ]);
 

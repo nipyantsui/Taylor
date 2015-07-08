@@ -9,6 +9,7 @@ module.exports = {
    */
   build_dir: 'build',
   compile_dir: 'bin',
+  propellant_dir: '../Propellant/Taylor/Assets',
 
   /**
    * This is a collection of file patterns that refer to our app code (the
@@ -67,17 +68,13 @@ module.exports = {
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
-      'vendor/bootstrap/dist/css/bootstrap.min.css'
+      'vendor/jquery/dist/jquery.min.js',
+      'vendor/bootstrap/dist/css/bootstrap.min.css',
+      'vendor/bootstrap/dist/js/bootstrap.min.js'
     ],
     css: [
     ],
     assets: [
-    ]
-  },
-  
-  asset_files: {
-    images: [
-      'src/assets/images/*.png'
     ]
   }
 };
