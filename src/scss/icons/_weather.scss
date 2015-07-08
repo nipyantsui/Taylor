@@ -11,21 +11,28 @@
 
 .flat-weather-sunny:before {
   content: "";
-  background: url('images/weather-icons.png') -113px -69px;
+  background: url(#{$relative-path-weather-icons}) -113px -69px;
   width: 137px;
   height: 137px;
 }
 
 .flat-weather-moon-lightning:before {
   content: "";
-  background: url('images/weather-icons.png') -113px -538px;
+  background: url(#{$relative-path-weather-icons}) -113px -538px;
   width: 142px;
   height: 169px;
 }
 
 .flat-weather-moon-windy:before {
   content: "";
-  background: url('images/weather-icons.png') -399px -815px;
+  background: url(#{$relative-path-weather-icons}) -399px -815px;
+  width: 145px;
+  height: 126px;
+}
+
+.flat-weather-moon-meow:before {
+  content: "";
+  background: url(#{$relative-path-weather-icons}) -399px -815px;
   width: 145px;
   height: 126px;
 }

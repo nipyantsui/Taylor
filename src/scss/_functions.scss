@@ -15,6 +15,10 @@ $footer-md: 600px;
 $ms-base: 1em;
 $ms-ratio: 1.618;
 
+/* Paths */
+$relative-path-images: "../images";
+$relative-path-weather-icons: "#{$relative-path-images}/weather-icons.png";
+
 /* 
 $screen-xs-max: $screen-sm-min - 1;
 $screen-sm-max: $screen-md-min - 1;
